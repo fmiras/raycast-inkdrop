@@ -1,0 +1,82 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "inkdrop",
+  "title": "Inkdrop",
+  "description": "List and search your Inkdrop notes",
+  "icon": "command-icon.png",
+  "author": "fmiras",
+  "categories": [
+    "Productivity",
+    "Applications"
+  ],
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "search-notes",
+      "title": "Search Notes",
+      "description": "Search over your Inkdrop notes",
+      "mode": "view"
+    },
+    {
+      "name": "search-notebooks",
+      "title": "Search Notebooks",
+      "description": "Search over your Inkdrop Notebooks",
+      "mode": "view"
+    }
+  ],
+  "preferences": [
+    {
+      "name": "username",
+      "type": "textfield",
+      "required": true,
+      "title": "HTTP Server Username",
+      "description": "Enter your HTTP Server username",
+      "placeholder": "devaslife"
+    },
+    {
+      "name": "password",
+      "type": "password",
+      "required": true,
+      "title": "HTTP Server Password",
+      "description": "Enter your HTTP Server password",
+      "placeholder": "mysecretpassword"
+    },
+    {
+      "name": "port",
+      "type": "textfield",
+      "required": false,
+      "title": "HTTP Server Port",
+      "description": "Enter your HTTP Server port",
+      "placeholder": "19840",
+      "default": "19840"
+    },
+    {
+      "name": "bindAddress",
+      "type": "textfield",
+      "required": false,
+      "title": "HTTP Server Address",
+      "description": "Enter your HTTP Server address",
+      "placeholder": "127.0.0.1",
+      "default": "127.0.0.1"
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.55.2",
+    "@raycast/utils": "^1.8.0"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "1.0.5",
+    "@types/node": "18.8.3",
+    "@types/react": "18.0.9",
+    "eslint": "^7.32.0",
+    "prettier": "^2.5.1",
+    "typescript": "^4.4.3"
+  },
+  "scripts": {
+    "build": "ray build -e dist",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint",
+    "publish": "npx @raycast/api@latest publish"
+  }
+}
