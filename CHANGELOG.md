@@ -1,5 +1,8 @@
 # Inkdrop Changelog
 
-## [Initial Version] - 2023-07-18
+## [1.0.0] - {PR_MERGE_DATE}
 
-Initial version code
+### Added
+
+- Search Notes command
+- Create Note command

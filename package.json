@@ -2,73 +2,72 @@
   "$schema": "https://www.raycast.com/schemas/extension.json",
   "name": "inkdrop",
   "title": "Inkdrop",
-  "description": "List and search your Inkdrop notes",
-  "icon": "command-icon.png",
-  "author": "fmiras",
+  "description": "Control Inkdrop with Raycast",
+  "icon": "inkdrop_icon.png",
+  "author": "yaeda",
   "categories": [
-    "Productivity",
-    "Applications"
+    "Productivity"
   ],
   "license": "MIT",
-  "commands": [
-    {
-      "name": "search-notes",
-      "title": "Search Notes",
-      "description": "Search over your Inkdrop notes",
-      "mode": "view"
-    },
-    {
-      "name": "search-notebooks",
-      "title": "Search Notebooks",
-      "description": "Search over your Inkdrop Notebooks",
-      "mode": "view"
-    }
-  ],
   "preferences": [
     {
-      "name": "username",
+      "name": "address",
       "type": "textfield",
+      "placeholder": "127.0.0.1",
+      "title": "bindAddress",
       "required": true,
-      "title": "HTTP Server Username",
-      "description": "Enter your HTTP Server username",
-      "placeholder": "devaslife"
-    },
-    {
-      "name": "password",
-      "type": "password",
-      "required": true,
-      "title": "HTTP Server Password",
-      "description": "Enter your HTTP Server password",
-      "placeholder": "mysecretpassword"
+      "description": "IP address of Inkdrop's client server"
     },
     {
       "name": "port",
       "type": "textfield",
-      "required": false,
-      "title": "HTTP Server Port",
-      "description": "Enter your HTTP Server port",
       "placeholder": "19840",
-      "default": "19840"
+      "title": "port",
+      "required": true,
+      "description": "Port of Inkdrop's client server"
     },
     {
-      "name": "bindAddress",
+      "name": "username",
       "type": "textfield",
-      "required": false,
-      "title": "HTTP Server Address",
-      "description": "Enter your HTTP Server address",
-      "placeholder": "127.0.0.1",
-      "default": "127.0.0.1"
+      "title": "username",
+      "required": true,
+      "description": "Username of Inkdrop's client server"
+    },
+    {
+      "name": "password",
+      "type": "password",
+      "title": "password",
+      "required": true,
+      "description": "Password of Inkdrop's client server"
+    }
+  ],
+  "commands": [
+    {
+      "name": "search-notes",
+      "title": "Search Notes",
+      "subtitle": "Inkdrop",
+      "description": "Search notes in Inkdrop",
+      "mode": "view"
+    },
+    {
+      "name": "create-note",
+      "title": "Create Note",
+      "subtitle": "Inkdrop",
+      "description": "Crete new note",
+      "mode": "view"
     }
   ],
   "dependencies": {
-    "@raycast/api": "^1.55.2",
-    "@raycast/utils": "^1.8.0"
+    "@raycast/api": "^1.37.0",
+    "luxon": "^2.4.0",
+    "node-fetch": "^3.2.5"
   },
   "devDependencies": {
-    "@raycast/eslint-config": "1.0.5",
-    "@types/node": "18.8.3",
-    "@types/react": "18.0.9",
+    "@types/luxon": "^2.3.2",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
     "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
     "prettier": "^2.5.1",
     "typescript": "^4.4.3"
   },
@@ -76,7 +75,6 @@
     "build": "ray build -e dist",
     "dev": "ray develop",
     "fix-lint": "ray lint --fix",
-    "lint": "ray lint",
-    "publish": "npx @raycast/api@latest publish"
+    "lint": "ray lint"
   }
 }
